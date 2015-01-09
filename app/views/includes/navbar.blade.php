@@ -14,8 +14,26 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="{{$path === '/home' ? 'active' : '';}}">
-                    <a href="{{URL::to('/')}}">Inicio</a>
+                <li class="{{$path === 'inicio' ? 'active' : '';}}">
+                    <a href="{{URL::to('/inicio')}}">Inicio</a>
+                </li>
+                <li class="{{$path === 'cuentas' ? 'active' : '';}}">
+                    <a href="{{URL::to('/cuentas')}}">Cuentas</a>
+                </li>
+                <li class="{{$path === 'operaciones' ? 'active' : '';}}">
+                    <a href="{{URL::to('/operaciones')}}">Operaciones</a>
+                </li>
+                <li class="{{$path === 'libroDiario' ? 'active' : '';}}">
+                    <a href="{{URL::to('/libroDiario')}}">Libro diario</a>
+                </li>
+                <li class="{{$path === 'libroMayor' ? 'active' : '';}}">
+                    <a href="{{URL::to('/libroMayor')}}">Libro mayor</a>
+                </li>
+                <li class="{{$path === 'balanceComprobacion' ? 'active' : '';}}">
+                    <a href="{{URL::to('/balanceComprobacion')}}">Balance de comprobación</a>
+                </li>
+                <li class="{{$path === 'totalizar' ? 'active' : '';}}">
+                    <a href="{{URL::to('/totalizar')}}">Totalizar</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
