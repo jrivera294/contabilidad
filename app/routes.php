@@ -12,11 +12,19 @@
 */
 
 Route::get('/inicio', array('uses'=>'CuentasController@index','as' => 'inicio'));
+
 Route::get('/cuentas', array('uses'=>'CuentasController@cuentas','as' => 'cuentas'));
-Route::get('/operaciones', array('uses'=>'CuentasController@operaciones','as' => 'operaciones'));
-Route::get('/libroDiario', array('uses'=>'CuentasController@libroDiario','as' => 'libroDiario'));
-Route::get('/libroMayor', array('uses'=>'CuentasController@libroMayor','as' => 'libroMayor'));
-Route::get('/balanceComprobacion', array('uses'=>'CuentasController@balanceComprobacion','as' => 'balanceComprobacion'));
-Route::get('/totalizar', array('uses'=>'CuentasController@totalizar','as' => 'totalizar'));
+Route::get('/cuentas/{id}', array('uses'=>'CuentasController@editCuenta','as' => 'editCuenta'));
+Route::get('/crearCuenta', array('uses'=>'CuentasController@crearCuenta','as' => 'crearCuenta'));
+
+
+Route::get('/operaciones', array('uses'=>'OperacionesController@operaciones','as' => 'operaciones'));
+
+
+
+Route::get('/libroDiario', array('uses'=>'CierresController@libroDiario','as' => 'libroDiario'));
+Route::get('/libroMayor', array('uses'=>'CierresController@libroMayor','as' => 'libroMayor'));
+Route::get('/balanceComprobacion', array('uses'=>'CierresController@balanceComprobacion','as' => 'balanceComprobacion'));
+Route::get('/totalizar', array('uses'=>'CierresController@totalizar','as' => 'totalizar'));
 
 //Route::post('/loginPost', array('uses'=>'AuthController@loginPost','as' => 'loginPost'));

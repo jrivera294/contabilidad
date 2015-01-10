@@ -17,11 +17,9 @@
         <div class="col-md-2"></div>
     </div>
 
-
-    <div class="row">
+    <div class="cointainer" style="padding-left:10px; padding-right:10px;">
         @yield('content')
     </div>
-
     <!-- Javascript includes -->
     @include('includes.js')
     <!-- /.Javascript includes -->
