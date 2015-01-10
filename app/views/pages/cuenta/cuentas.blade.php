@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-md-3">
                    <br>
-                    <a class="btn btn-primary btn-block" href="#" role="button">Crear cuenta</a>
+                    <a class="btn btn-primary btn-block" href="{{ URL::to('/crearCuenta') }}" role="button">Crear cuenta</a>
                 </div>
             </div>
             <hr>
@@ -27,13 +27,25 @@
                         @foreach ($cuentas as $cuenta)
                         <tr>
                             <td>{{$cuenta->nombre}}</td>
-                            <td>{{$cuenta->tipo}}</td>
+                            <td>
+                                @if($cuenta->tipo==1)
+                                    Activos
+                                @elseif($cuenta->tipo==2)
+                                    Pasivos
+                                @elseif($cuenta->tipo==3)
+                                    Patrimonio
+                                @elseif($cuenta->tipo==4)
+                                    Ingresos
+                                @elseif($cuenta->tipo==5)
+                                    Egresos
+                                @endif
+                            </td>
                             <td><p>{{$cuenta->descripcion}}</p></td>
                             <td>
-                                <a class="btn btn-default" href="#" role="button">
+                                <a class="btn btn-default" href="{{ URL::action('CuentasController@editCuenta', [$cuenta->id]) }}" role="button">
                                     <i class="fa fa-pencil-square-o"></i>
                                 </a>
-                                <a class="btn btn-default" href="#" role="button">
+                                <a class="btn btn-default" href="{{ URL::action('CuentasController@deleteCuenta', [$cuenta->id]) }}" role="button">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </td>

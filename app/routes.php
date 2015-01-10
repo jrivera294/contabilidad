@@ -15,7 +15,11 @@ Route::get('/inicio', array('uses'=>'CuentasController@index','as' => 'inicio'))
 
 Route::get('/cuentas', array('uses'=>'CuentasController@cuentas','as' => 'cuentas'));
 Route::get('/cuentas/{id}', array('uses'=>'CuentasController@editCuenta','as' => 'editCuenta'));
+Route::get('/cuentas/{id}/delete', array('uses'=>'CuentasController@deleteCuenta','as' => 'deleteCuenta'));
 Route::get('/crearCuenta', array('uses'=>'CuentasController@crearCuenta','as' => 'crearCuenta'));
+Route::post('/storeCuenta', array('uses'=>'CuentasController@storeCuenta','as' => 'storeCuenta'));
+Route::patch('/updateCuenta/{id}', array('uses'=>'CuentasController@updateCuenta','as' => 'updateCuenta'));
+
 
 
 Route::get('/operaciones', array('uses'=>'OperacionesController@operaciones','as' => 'operaciones'));
