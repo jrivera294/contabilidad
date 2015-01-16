@@ -21,7 +21,7 @@
                     <a href="{{URL::to('/cuentas')}}">Cuentas</a>
                 </li>
                 <li class="{{$path === 'operaciones' ? 'active' : '';}}">
-                    <a href="{{URL::to('/operaciones')}}">Operaciones</a>
+                    <a href="{{URL::to('/listaOperaciones')}}">Operaciones</a>
                 </li>
                 <li class="{{$path === 'libroDiario' ? 'active' : '';}}">
                     <a href="{{URL::to('/libroDiario')}}">Libro diario</a>

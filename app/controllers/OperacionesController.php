@@ -9,5 +9,19 @@ class OperacionesController extends BaseController {
 		return View::make('pages/operaciones/operaciones')->with('cuentas',$cuentas);
 	}
 
+    public function listaOperaciones(){
+        $operaciones = Operacion::all();
+
+        return View::make('pages/operaciones/listaOperaciones')->with('operaciones',$operaciones);
+    }
+
+    public function deleteOperacion($id){
+        $operacion = Operacion::find($id);
+        $operacion->delete();
+
+        return Redirect::to('listaOperaciones')
+            ->with('mensaje_error', 'Operacion eliminada exitosamente')
+            ->with('tipo_error', 'success');
+    }
 
 }

@@ -23,7 +23,8 @@ Route::patch('/updateCuenta/{id}', array('uses'=>'CuentasController@updateCuenta
 
 //Route::post('/operacionesPost', array('uses'=>'CuentasController@operacionesCuentas','as' => 'operacionesPost'));
 Route::get('/operaciones', array('uses'=>'OperacionesController@operaciones','as' => 'operaciones'));
-
+Route::get('/listaOperaciones', array('uses'=>'OperacionesController@listaOperaciones','as' => 'listaOperaciones'));
+Route::get('/operaciones/{id}/delete', array('uses'=>'OperacionesController@deleteOperacion','as' => 'deleteOperacion'));
 
 
 Route::get('/libroDiario', array('uses'=>'estadosController@libroDiario','as' => 'libroDiario'));
