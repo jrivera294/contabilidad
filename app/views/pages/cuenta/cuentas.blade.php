@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-bordered">
-                        <tr>
+                        <tr class="active">
                             <th>Nombre</th>
                             <th>Tipo</th>
                             <th>Descripcion</th>
@@ -47,6 +47,9 @@
                                 </a>
                                 <a class="btn btn-default" href="{{ URL::action('CuentasController@deleteCuenta', [$cuenta->id]) }}" role="button">
                                     <i class="fa fa-trash"></i>
+                                </a>
+                                <a class="btn btn-default" href="{{ URL::action('estadosController@libroMayor', [$cuenta->id]) }}" role="button">
+                                    Libro mayor
                                 </a>
                             </td>
                         </tr>

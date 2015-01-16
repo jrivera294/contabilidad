@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section ('title') Libro diario - Cuentas @stop
+@section ('title') Contable3000 - Libro diario @stop
 @section('content')
     <!-- Page Content -->
            <div class="row">
@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-bordered">
-                        <tr>
+                        <tr class="active">
                             <th>Fecha</th>
                             <th>Cuenta</th>
                             <th>Debe</th>
@@ -27,12 +27,13 @@
                         @foreach ($operaciones as $operacion)
                         <tr>
                             <td>{{$operacion->fecha}}</td>
-                            <td> - {{$operacon->id}} - </td>
+                            <td> - {{$operacion->id}} - </td>
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+
                             @foreach ($operacion->cuentas as $cuenta)
+                               <tr>
                                 <td></td>
                                 <td>{{$cuenta->nombre}}</td>
                                 @if($cuenta->tipo == 1 || $cuenta->tipo == 5)
@@ -52,13 +53,17 @@
                                 <td></td>
                                     @endif
                                 @endif
-                                <td></td>
-                                <td></td>
+                                </tr>
                             @endforeach
-                        </tr>
+                                <tr>
+                                    <td>Descripción:</td>
+                                    <td>{{$operacion->descripcion}}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
                         @endforeach
                         @endif
-                        <tr>
+                        <tr class="success">
                             <td></td>
                             <td>Total:</td>
                             <td>{{$totalDebe}}</td>
