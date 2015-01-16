@@ -44,4 +44,13 @@ class Operacion extends Eloquent {
                 WHERE operacionescuenta.operaciones_id = ".$operacion_id));
         return $results;
     }
+
+        public static function getOperacionesByCuenta($cuenta_id){
+        $results = DB::select(
+            DB::raw("SELECT operacionescuenta.monto, operaciones.fecha, operaciones.descripcion
+                FROM operacionescuenta
+                    LEFT JOIN operaciones ON operaciones.id = operacionescuenta.operaciones_id
+                WHERE operacionescuenta.cuenta_id = ".$cuenta_id));
+        return $results;
+    }
 }

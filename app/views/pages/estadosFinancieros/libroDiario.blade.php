@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section ('title') Libro diario - Cuentas @stop
+@section ('title') Contable3000 - Libro diario @stop
 @section('content')
     <!-- Page Content -->
            <div class="row">
