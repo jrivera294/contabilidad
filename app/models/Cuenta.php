@@ -15,7 +15,7 @@ class Cuenta extends Eloquent {
     public $errors;
 
     public function Operacion(){
-            return $this->HasMany('Operacion');
+            return $this->belongsToMany('Operacion','operacionescuenta');
     }
 
     public function isValid($data)
