@@ -10,19 +10,18 @@ class Operacion extends Eloquent {
 	 */
 	protected $table = 'operaciones';
 
-    protected $fillable = array('fecha','descripcion','monto');
+    protected $fillable = array('fecha','descripcion');
     protected $guarded = array('id');
     public $errors;
 
     public function Cuenta(){
-            return $this->BelongsTo('Cuenta');
+            return $this->belongsToMany('Cuenta','operacionescuenta');
     }
 
     public function isValid($data)
     {
         $rules = array(
             'fecha' => 'required',
-            'monto' => 'required',
             'descripcion' => 'required'
         );
 
