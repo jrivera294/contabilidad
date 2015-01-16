@@ -45,7 +45,7 @@ class Operacion extends Eloquent {
         return $results;
     }
 
-        public static function getOperacionesByCuenta($cuenta_id){
+    public static function getOperacionesByCuenta($cuenta_id){
         $results = DB::select(
             DB::raw("SELECT operacionescuenta.monto, operaciones.fecha, operaciones.descripcion
                 FROM operacionescuenta

@@ -29,6 +29,3 @@ Route::get('/operaciones', array('uses'=>'OperacionesController@operaciones','as
 Route::get('/libroDiario', array('uses'=>'estadosController@libroDiario','as' => 'libroDiario'));
 Route::get('/libroMayor/{id}', array('uses'=>'estadosController@libroMayor','as' => 'libroMayor'));
 Route::get('/balanceComprobacion', array('uses'=>'estadosController@balanceComprobacion','as' => 'balanceComprobacion'));
-Route::get('/totalizar', array('uses'=>'estadosController@totalizar','as' => 'totalizar'));
-
-//Route::post('/loginPost', array('uses'=>'AuthController@loginPost','as' => 'loginPost'));

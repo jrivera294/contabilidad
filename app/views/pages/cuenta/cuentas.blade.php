@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-bordered">
-                        <tr>
+                        <tr class="active">
                             <th>Nombre</th>
                             <th>Tipo</th>
                             <th>Descripcion</th>

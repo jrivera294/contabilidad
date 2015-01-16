@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-bordered">
-                        <tr>
+                        <tr class="active">
                             <th>Fecha</th>
                             <th>Cuenta</th>
                             <th>Debe</th>
@@ -55,10 +55,15 @@
                                 @endif
                                 </tr>
                             @endforeach
-
+                                <tr>
+                                    <td>Descripción:</td>
+                                    <td>{{$operacion->descripcion}}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
                         @endforeach
                         @endif
-                        <tr>
+                        <tr class="success">
                             <td></td>
                             <td>Total:</td>
                             <td>{{$totalDebe}}</td>

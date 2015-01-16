@@ -37,4 +37,13 @@ class Cuenta extends Eloquent {
         }
     }
 
+    public static function getBalancesCuentas(){
+        $results = DB::select(
+            DB::raw("SELECT cuenta.* , SUM(operacionescuenta.monto) AS monto
+                FROM cuenta
+                    LEFT JOIN operacionescuenta ON operacionescuenta.cuenta_id = cuenta.id
+                GROUP BY cuenta.id"));
+        return $results;
+    }
+
 }
