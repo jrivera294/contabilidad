@@ -27,12 +27,13 @@
                         @foreach ($operaciones as $operacion)
                         <tr>
                             <td>{{$operacion->fecha}}</td>
-                            <td> - {{$operacon->id}} - </td>
+                            <td> - {{$operacion->id}} - </td>
                             <td></td>
                             <td></td>
                         </tr>
-                        <tr>
+
                             @foreach ($operacion->cuentas as $cuenta)
+                               <tr>
                                 <td></td>
                                 <td>{{$cuenta->nombre}}</td>
                                 @if($cuenta->tipo == 1 || $cuenta->tipo == 5)
@@ -52,10 +53,9 @@
                                 <td></td>
                                     @endif
                                 @endif
-                                <td></td>
-                                <td></td>
+                                </tr>
                             @endforeach
-                        </tr>
+
                         @endforeach
                         @endif
                         <tr>

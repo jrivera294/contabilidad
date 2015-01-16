@@ -35,4 +35,13 @@ class Operacion extends Eloquent {
             return false;
         }
     }
+
+    public static function getCuentaByOperacion($operacion_id){
+        $results = DB::select(
+            DB::raw("SELECT cuenta.tipo, cuenta.nombre, operacionescuenta.monto
+                FROM operacionescuenta
+                    LEFT JOIN cuenta ON cuenta.id = operacionescuenta.cuenta_id
+                WHERE operacionescuenta.operaciones_id = ".$operacion_id));
+        return $results;
+    }
 }
