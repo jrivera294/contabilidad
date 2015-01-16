@@ -21,7 +21,7 @@ Route::post('/storeCuenta', array('uses'=>'CuentasController@storeCuenta','as' =
 Route::patch('/updateCuenta/{id}', array('uses'=>'CuentasController@updateCuenta','as' => 'updateCuenta'));
 
 
-
+//Route::post('/operacionesPost', array('uses'=>'CuentasController@operacionesCuentas','as' => 'operacionesPost'));
 Route::get('/operaciones', array('uses'=>'OperacionesController@operaciones','as' => 'operaciones'));
 
 
