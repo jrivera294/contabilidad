@@ -13,9 +13,7 @@
             <br>
             <div class="row">
                 <div class="col-md-12">
-                <div class="control-group" id="fields">
                     <div class="col-md-8">
-                        <label class="control-label" for="field1">Operacion</label>
                              {{Form::open(array('url' => 'crearOperacion')) }}
                              <div class="row">
                                 <div class="col-md-4 ">
@@ -25,50 +23,29 @@
                                     {{ Form::text('descrip', null, array('placeholder' => 'Descripcion de la operacion', 'class' => 'form-control')) }}
                                 </div>
                             </div>
-<!--
                               <div class="row">
-                                <div class="controls ">
-                                    <div class="entry input-group col-md-12">
+                                    <div class="controls" id="op">
+                                    <div class="entry input-group" id="group">
                                         <div class="col-md-4 ">
                                             {{Form::select('cuenta[]',$cuentas, null , array('class' => 'form-control')) }}
                                         </div>
                                          <div class="col-md-8 ">
                                             {{ Form::text('monto[]', null, array('placeholder' => '0', 'class' => 'form-control')) }}
+                                        <span class="input-group-btn">
+                                        <button class="btn btn-success btn-add" type="button">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                     </span>
                                         </div>
                                   </div>
-                                 <span class="input-group-btn">
-                                    <button class="btn btn-success btn-add" type="button">
-                                        <span class="glyphicon glyphicon-plus"></span>
-                                    </button>
-                                 </span>
-                                 </div>
-                            </div>
--->
-                            <div class="row">
-                                  <div class="controls">
-                <form role="form" autocomplete="off">
-                    <div class="entry input-group col-xs-3">
-                        <input class="form-control" name="fields[]" type="text" placeholder="Type something" />
-                    	<span class="input-group-btn">
-                            <button class="btn btn-success btn-add" type="button">
-                                <span class="glyphicon glyphicon-plus"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-            <br>
-            <small>Press <span class="glyphicon glyphicon-plus gs"></span> to add another form field :)</small>
-            </div>
-
-
+                                </div>
                             </div>
                             </div>
-    <!--                    boton de submit por laravel-->
+                         {{ Form::button($action . 'operacion', array('type' => 'submit', 'class' => 'btn btn-primary')) }}
                          {{Form::close()}}
                     <br>
                     </div>
-                  </div>
-                </div>
+</div>
 @stop
 
 @section('page_scripts')
