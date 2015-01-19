@@ -21,7 +21,7 @@ class EstadosController extends BaseController {
                     if($cuenta->monto>0){
                         $totalHaber += $cuenta->monto;
                     }else{
-                        $totalDebe += $cuenta->monto(-1);
+                        $totalDebe += $cuenta->monto*(-1);
                     }
                 }
             }

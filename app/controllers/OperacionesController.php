@@ -16,26 +16,29 @@ class OperacionesController extends BaseController {
     }
 
     public function storeOperacion(){
-        $operacion = new Operaciones;
+        $operacion = new Operacion;
         $data = Input::all();
-
+//return $data;
         if ($operacion->isValid($data))
         {
             $operacion->fill($data);
             $operacion->save();
-            return Redirect::route('operaciones')
+
+
+            foreach($data['cuenta'] as $key => $cuenta){
+                $operacion->Cuenta()->attach(array('cuenta_id'=>$cuenta),array('monto'=>$data['monto'][$key]));
+            }
+
+            return Redirect::route('listaOperaciones')
                 ->with('mensaje_error', 'Operaciones almacenadas correctamente')
                 ->with('tipo_error', 'success');
         }
-//        else
-//        {
-//            return Redirect::route('crearCuenta')
-//                ->withInput()
-//                ->withErrors($cuenta->errors)
-//                ->with('error_flag',true);
-//        }
-		return View::make('pages/operaciones/operaciones');
-
+        else
+        {
+            return Redirect::route('operaciones')
+                ->withErrors($operacion->errors)
+                ->with('error_flag',true);
+        }
     }
 
     public function deleteOperacion($id){

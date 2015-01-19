@@ -16,45 +16,57 @@
                     <h3>Operaciones</h3>
 
                 </div>
+               {{Form::open(array('url' => 'storeOperacion')) }}
+               <div class="col-md-3">
+                   {{ Form::button($action, array('type' => 'submit', 'class' => 'btn btn-primary btn-block')) }}
+               </div>
+               <div class="col-md-1"></div>
             </div>
             <hr>
             <br>
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-8">
-<!--                          {{ Form::model($operacion, $form_data, array('role' => 'form')) }}-->
-                             {{Form::open(array('url' => 'storeOperacion')) }}
+<!--                             {{Form::open(array('url' => 'storeOperacion')) }}-->
                              <div class="row">
                                 <div class="col-md-4 ">
+                                    <label for="fecha" id="" class="">Fecha</label>
                                     {{ Form::input('date','fecha', null, array('placeholder' => '', 'class' => 'form-control')) }}
                                 </div>
                                  <div class="col-md-8 ">
-                                    {{ Form::text('descrip', null, array('placeholder' => 'Descripcion de la operacion', 'class' => 'form-control')) }}
+                                     <label for="descripcion" id="" class="">Descripcion</label>
+                                    {{ Form::text('descripcion', null, array('placeholder' => 'Descripcion de la operacion', 'class' => 'form-control')) }}
                                 </div>
-                            </div>
+                            </div><br>
                               <div class="row">
                                     <div class="controls" id="op">
                                     <div class="entry input-group" id="group">
                                         <div class="col-md-4 ">
+                                            <label for="cuenta[]" id="" class="">Cuenta</label>
                                             {{Form::select('cuenta[]',$cuentas, null , array('class' => 'form-control')) }}
+
                                         </div>
-                                         <div class="col-md-8 ">
+                                         <div class="col-md-7 ">
+                                             <label for="monto[]" id="" class="">Monto</label>
                                             {{ Form::text('monto[]', null, array('placeholder' => '0', 'class' => 'form-control')) }}
-                                        <span class="input-group-btn">
+                                        </div>
+                                        <br>
+                                        <div class="col-md-1">
+                                         <span class="input-group-btn">
                                         <button class="btn btn-success btn-add" type="button">
                                             <span class="glyphicon glyphicon-plus"></span>
                                         </button>
-                                     </span>
-                                        </div>
+                                      </span>
+                                    </div>
                                   </div>
                                 </div>
                             </div>
                             </div>
-                         {{ Form::button($action . 'Crear', array('type' => 'submit', 'class' => 'btn btn-primary')) }}
                          {{Form::close()}}
                     <br>
-                    </div>
-</div>
+<!--                    </div>-->
+                </div>
+            </div>
 @stop
 
 @section('page_scripts')

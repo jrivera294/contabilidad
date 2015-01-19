@@ -41,7 +41,7 @@ class Operacion extends Eloquent {
             DB::raw("SELECT cuenta.tipo, cuenta.nombre, operacionescuenta.monto
                 FROM operacionescuenta
                     LEFT JOIN cuenta ON cuenta.id = operacionescuenta.cuenta_id
-                WHERE operacionescuenta.operaciones_id = ".$operacion_id));
+                WHERE operacionescuenta.operacion_id = ".$operacion_id));
         return $results;
     }
 
@@ -49,7 +49,7 @@ class Operacion extends Eloquent {
         $results = DB::select(
             DB::raw("SELECT operacionescuenta.monto, operaciones.fecha, operaciones.descripcion
                 FROM operacionescuenta
-                    LEFT JOIN operaciones ON operaciones.id = operacionescuenta.operaciones_id
+                    LEFT JOIN operaciones ON operaciones.id = operacionescuenta.operacion_id
                 WHERE operacionescuenta.cuenta_id = ".$cuenta_id));
         return $results;
     }

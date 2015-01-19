@@ -50,7 +50,6 @@ class CuentasController extends BaseController {
                 ->withErrors($cuenta->errors)
                 ->with('error_flag',true);
         }
-		return View::make('pages/cuenta/formCuenta');
 	}
 
     public function updateCuenta($id)
