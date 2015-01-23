@@ -24,10 +24,11 @@
                             <th>Haber</th>
                         </tr>
                         @if(!is_null($operaciones))
+                        <?php $i=1;?>
                         @foreach ($operaciones as $operacion)
                         <tr>
                             <td>{{$operacion->fecha}}</td>
-                            <td> - {{$operacion->id}} - </td>
+                            <td> - {{$i}} - </td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -61,6 +62,7 @@
                                     <td></td>
                                     <td></td>
                                 </tr>
+                                <?php $i++;?>
                         @endforeach
                         @endif
                         <tr class="success">

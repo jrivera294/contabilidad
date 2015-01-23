@@ -25,9 +25,11 @@ class OperacionesController extends BaseController {
             $operacion->fill($data);
             $operacion->save();
 
-
+            $i=0;
             foreach($data['cuenta'] as $key => $cuenta){
-                $operacion->Cuenta()->attach(array('cuenta_id'=>$cuenta),array('monto'=>$data['monto'][$key]));
+
+                $operacion->Cuenta()->attach(array('cuenta_id'=>$cuenta),array('monto'=>$data['monto'][$key],'orden'=>$i));
+                $i++;
             }
 
             return Redirect::route('listaOperaciones')

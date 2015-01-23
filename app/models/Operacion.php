@@ -15,7 +15,7 @@ class Operacion extends Eloquent {
     public $errors;
 
     public function Cuenta(){
-            return $this->belongsToMany('Cuenta','operacionescuenta');
+            return $this->belongsToMany('Cuenta','operacionescuenta')->withTimestamps();
     }
 
     public function isValid($data)
@@ -41,7 +41,8 @@ class Operacion extends Eloquent {
             DB::raw("SELECT cuenta.tipo, cuenta.nombre, operacionescuenta.monto
                 FROM operacionescuenta
                     LEFT JOIN cuenta ON cuenta.id = operacionescuenta.cuenta_id
-                WHERE operacionescuenta.operacion_id = ".$operacion_id));
+                WHERE operacionescuenta.operacion_id = ".$operacion_id."
+                ORDER BY operacionescuenta.orden"));
         return $results;
     }
 
@@ -50,7 +51,8 @@ class Operacion extends Eloquent {
             DB::raw("SELECT operacionescuenta.monto, operaciones.fecha, operaciones.descripcion
                 FROM operacionescuenta
                     LEFT JOIN operaciones ON operaciones.id = operacionescuenta.operacion_id
-                WHERE operacionescuenta.cuenta_id = ".$cuenta_id));
+                WHERE operacionescuenta.cuenta_id = ".$cuenta_id."
+                ORDER BY operacionescuenta.orden"));
         return $results;
     }
 }
