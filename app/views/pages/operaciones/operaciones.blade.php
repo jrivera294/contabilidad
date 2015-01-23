@@ -10,13 +10,13 @@
 @section ('title') Contable3000 - {{ $action }} @stop
 @section('content')
     <!-- Page Content -->
-
+{{Form::open(array('url' => 'storeOperacion')) }}
            <div class="row">
                 <div class="col-md-8">
                     <h3>Operaciones</h3>
 
                 </div>
-               {{Form::open(array('url' => 'storeOperacion')) }}
+
                <div class="col-md-3">
                    {{ Form::button($action, array('type' => 'submit', 'class' => 'btn btn-primary btn-block')) }}
                </div>
@@ -48,7 +48,7 @@
                                         </div>
                                          <div class="col-md-7 ">
                                              <label for="monto[]" id="" class="">Monto</label>
-                                            {{ Form::text('monto[]', null, array('placeholder' => '0', 'class' => 'form-control')) }}
+                                            {{ Form::text('monto[]',null, array('placeholder' => '0', 'class' => 'form-control')) }}
                                         </div>
                                         <br>
                                         <div class="col-md-1">
@@ -62,11 +62,12 @@
                                 </div>
                             </div>
                             </div>
-                         {{Form::close()}}
+
                     <br>
 <!--                    </div>-->
                 </div>
             </div>
+            {{Form::close()}}
 @stop
 
 @section('page_scripts')
