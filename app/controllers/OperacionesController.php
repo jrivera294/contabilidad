@@ -19,7 +19,7 @@ class OperacionesController extends BaseController {
         $operacion = new Operacion;
         $data = Input::all();
 
-return $data;
+//return $data;
         if ($operacion->isValid($data))
         {
             $operacion->fill($data);
