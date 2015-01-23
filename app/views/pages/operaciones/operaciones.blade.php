@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-8">
-<!--                             {{Form::open(array('url' => 'storeOperacion')) }}-->
+
                              <div class="row">
                                 <div class="col-md-4 ">
                                     <label for="fecha" id="" class="">Fecha</label>
