@@ -15,7 +15,7 @@ class Cuenta extends Eloquent {
     public $errors;
 
     public function Operacion(){
-            return $this->belongsToMany('Operacion','operacionescuenta');
+            return $this->belongsToMany('Operacion','operacionescuenta')->withTimestamps();
     }
 
     public function isValid($data)
